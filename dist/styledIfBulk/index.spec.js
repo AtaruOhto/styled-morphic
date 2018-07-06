@@ -5,59 +5,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const index_1 = __importDefault(require("./index"));
-const bulkStyles = [
+const bulkStyles = (props) => [
     {
-        check: 'display',
-        true: 'display: none;',
-        false: 'display: block;',
+        check: props.display,
+        true: `display: ${props.display};`,
+        false: `display: none;`,
     },
     {
-        check: 'padding',
-        true: 'padding: 0px;',
+        check: props.padding,
+        true: `padding: ${props.padding};`,
         false: 'padding: 8px;',
     },
     {
-        check: 'margin',
-        true: 'margin: 24px;',
+        check: props.margin,
+        true: `margin: ${props.margin};`,
         false: 'margin: 0 12px;',
     },
 ];
 const props = {
-    display: true,
-    margin: true,
+    display: 'block',
+    margin: '24px',
 };
 describe(`styledIfBulk`, () => {
     describe(`Positive`, () => {
         it('Returns bulkedStyles when passed parameters', done => {
-            const result = index_1.default(props, bulkStyles);
-            chai_1.expect(result).to.have.string('display: none;');
+            const result = index_1.default(bulkStyles(props));
+            chai_1.expect(result).to.have.string('display: block;');
             chai_1.expect(result).to.have.string('padding: 8px;');
             chai_1.expect(result).to.have.string('margin: 24px;');
             done();
-        });
-        it('Returns bulkedStyles when passed parameters', done => {
-            const result = index_1.default(props, bulkStyles);
-            chai_1.expect(result).to.have.string('display: none;');
-            chai_1.expect(result).to.have.string('padding: 8px;');
-            chai_1.expect(result).to.have.string('margin: 24px;');
-            done();
-        });
-    });
-    describe(`Negative`, () => {
-        it('Throw when passed parameters lacks', done => {
-            const wrongBulkStyles = [
-                {
-                    check: 'display',
-                    true: 'display: none;',
-                },
-            ];
-            try {
-                index_1.default(props, wrongBulkStyles);
-            }
-            catch (e) {
-                chai_1.expect(e.toString()).to.be.contains('invalid');
-                done();
-            }
         });
     });
 });

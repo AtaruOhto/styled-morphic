@@ -16,10 +16,7 @@ export interface IBulkIfConditions {
   false: string;
 }
 
-export declare function styledIfBulk(
-  props: any,
-  bulkStyles: IBulkIfConditions[],
-);
+export declare function styledIfBulk(bulkStyles: IBulkIfConditions[]): string;
 
 export interface IBulkSwitchConditions {
   check: string;
