@@ -20,9 +20,17 @@ yarn add styled-morphic
 
 <h2 id="api">API</h2>
 
-<h3>styledIf</h3>
+- <a href="#styledIf">styledIf</a>
+- <a href="#styledIfBulk">styledIfBulk</a>
+- <a href="#styledSwitch">styledSwitch</a>
+- <a href="#styledSwitchBulk">styledSwitchBulk</a>
+
+<h3 id="styledIf">styledIf</h3>
 
 - Definition
+
+styles of stylesIfPresent is applied if valIsPresent is truthy.
+styles of stylesIfNotPresent is applied if valIsPresent is falthy.
 
 ```
 styledIf(
@@ -54,7 +62,11 @@ export const SampleStyledIf = styled.div`
 <SampleStyledIf color={"#F00"}>StyledIf</SampleStyledIf>
 ```
 
-<h3>styledIfBulk</h3>
+<h3 id="styledIfBulk">styledIfBulk</h3>
+
+Add styles logics all at once.
+styles of true is applied when the check value is present.
+styles of false is applied when the check value is not present.
 
 - Definition
 
@@ -114,7 +126,10 @@ export const SampleStyledIfBulk = styled.div`
 </SampleStyledIfBulk>
 ```
 
-<h3>styledSwitch</h3>
+<h3 id="styledSwitch">styledSwitch</h3>
+
+Check the "switchKey" and apply corresponding styles in the "switchConditions".
+the "defaultStyles" is applied when no key was matched.
 
 - Definition
 
@@ -156,12 +171,14 @@ export const SampleStyledSwitch = styled.button`
 <SampleStyledSwitch type={"danger"}>Button</SampleStyledSwitch>
 ```
 
-<h3>styledSwitchBulk</h3>
+<h3 id="styledSwitchBulk">styledSwitchBulk</h3>
+
+Pass props and apply style logics all at once with bulkSwitch.
 
 - Definition
 
 ```
-export declare function styledSwitchBulk(
+styledSwitchBulk(
   props: any,
   bulkSwitch: [
     {
