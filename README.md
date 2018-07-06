@@ -3,7 +3,6 @@
 Utility library for building expressive <a href="https://www.styled-components.com/" target="_blank">styled-components</a> 💅 more easily and neatly.
 
 - <a href="#installation">Installation</a>
-- <a href="#getting_started">Getting Started</a>
 - <a href="#api">API</a>
 
 <h2 id="installation">Installation</h2>
