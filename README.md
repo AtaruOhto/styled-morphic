@@ -1,5 +1,7 @@
 # styled-morphic
 
+[![Build Status](https://travis-ci.org/AtaruOhto/styled-morphic.svg?branch=master)](https://travis-ci.org/AtaruOhto/styled-morphic)
+
 Utility library for building expressive <a href="https://www.styled-components.com/" target="_blank">styled-components</a> 💅 more easily and neatly.
 
 - <a href="#installation">Installation</a>
